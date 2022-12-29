@@ -1,0 +1,27 @@
+.header {
+  /* width: 100%; */
+  height: 80px;
+  background-color: rgb(236 236 230);
+}
+.logo {
+  margin-left: 20px;
+  cursor: pointer;
+}
+.dummy {
+  /* width: 100%; */
+  height: 70px;
+  background-color: mediumturquoise;
+}
+.hover {
+  cursor: pointer;
+}
+.he {
+  background-color: rgb(234, 125, 125);
+}
+
+.scroll::-webkit-scrollbar {
+  /* WebKit */
+  width: 0;
+  height: 0;
+}
+

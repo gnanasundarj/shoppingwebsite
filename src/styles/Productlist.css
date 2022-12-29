@@ -1,0 +1,10 @@
+.dropColor {
+  margin-right: 10px;
+  
+}
+
+.dropColor {
+  background-color: antiquewhite;
+  border: 2px rgb(165, 157, 157) solid;
+  border-radius: 10%;
+}
