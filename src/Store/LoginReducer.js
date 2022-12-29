@@ -11,7 +11,6 @@ let LoginReducer = createSlice({
   initialState: initialStatus,
   reducers: {
     setUserData: (state, actions) => {
-      console.log(actions.payload);
       state.userInfo.username = actions.payload.username;
       state.loginStatus = true;
     },

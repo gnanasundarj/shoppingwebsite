@@ -79,7 +79,6 @@ export default function Register(props) {
   function updateUserData(e) {
     userData[e.target.name] = e.target.value;
 
-    console.log(userData);
   }
   //////////////////////stroting in firebase.////////////
   async function storeinFirebase(id, data) {
@@ -89,7 +88,6 @@ export default function Register(props) {
       userID: data.userId,
       mail: data.mail,
     });
-    console.log("Document written with ID: ", docRef);
     setErrormsgSignin("Signup success. Please login");
   }
 
@@ -100,17 +98,14 @@ export default function Register(props) {
         // Signed in
         const user = userCredential.user;
         storeinFirebase(user.uid, data);
-        console.log(user.uid);
       })
       .catch((error) => {
         const errorMessage = error.message;
-        console.log("res", errorMessage);
         let msg = errorMessage.slice(
           errorMessage.indexOf("/") + 1,
           errorMessage.length - 2
         );
 
-        console.log(msg);
         setErrormsgSignin(msg ? msg : "network error");
       });
   }

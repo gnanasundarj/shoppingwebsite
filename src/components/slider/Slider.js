@@ -3,8 +3,8 @@ import styled from "styled-components";
 import "./slider.css";
 import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 import { sliderItems } from "../../Data/Data";
-import { useState,useEffect } from "react";
-import Carousel from 'react-bootstrap/Carousel';
+import { useState } from "react";
+
 
 const Sliding = styled.div`
   display: flex;
@@ -21,7 +21,6 @@ export default function Slider(props) {
     } else {
       setSlidevalue(slideValue < 2 ? slideValue + 1 : 0);
     }
-    console.log(slideValue);
   }
   
   return (
@@ -45,7 +44,6 @@ export default function Slider(props) {
                     <h4 style={{ marginBottom: "30px" }}>{data.desc}</h4>
                     <div
                       onClick={() => {
-                        console.log("he");
                         scrollFunction();
                       }}
                       className="slider-button d-flex justify-content-center align-items-center"

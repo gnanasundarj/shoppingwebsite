@@ -1,9 +1,7 @@
 import Home from "./pages/home";
 import Payment from "./pages/payment";
-import Register from "./pages/Register";
 import Success from "./pages/success";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
 import Wishlist from "./pages/Wishlist";
 import ProductList from "./pages/ProductList";
 import Cart from "./pages/Cart";

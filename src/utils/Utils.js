@@ -2,7 +2,6 @@ function roundoff(value) {
   return parseFloat(value.toFixed(2));
 }
 export function totalAmt(state, action, type = "none") {
-  console.log(type);
   // if (type === "replace") {
   //   state.checkout.subtotal = roundoff(
   //     state.checkout.subtotal - (state.checkout.initialprice * action.count)
@@ -29,7 +28,6 @@ export function totalAmt(state, action, type = "none") {
     state.checkout.total = Math.round(total * 100) / 100;
   }
   if (type === "dec") {
-    console.log(action.payload);
 
     state.checkout.subtotal = roundoff(
       state.checkout.subtotal - action.payload.initialprice
@@ -57,7 +55,6 @@ export function totalAmt(state, action, type = "none") {
     state.checkout.total = Math.round(total * 100) / 100;
   }
   if (type === "remove") {
-    console.log(action.payload);
 
     state.checkout.subtotal = roundoff(
       state.checkout.subtotal -

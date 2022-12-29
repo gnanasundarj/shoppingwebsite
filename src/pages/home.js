@@ -5,12 +5,11 @@ import Catagory from "../components/catagory/Catagory";
 import Products from "../components/products/Products";
 import Mail from "../components/mail/Mail";
 import Footer from "../components/Footer/Footer";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { AllproductsDetail } from "../Api/Api";
 import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { useRef } from "react";
-import styled from "styled-components";
 import { setAllproducts, changeFetchState } from "../Store/cartReducer";
 import { closeModel } from "../Store/Model";
 
@@ -36,17 +35,14 @@ export default function Home() {
   }, []);
   let navigate = useNavigate();
   function catagory(e) {
-    console.log(e);
     navigate(`/productlist/${e}`);
   }
   function scrollFunction() {
-    // console.log(myRef);
     window.scrollTo({ behavior: "smooth", top: myRef.current.offsetTop });
   }
   return (
     <div
       onClick={(e) => {
-        console.log(e.target.id);
         if (e.target.id !== "input") {
           dispatch(closeModel());
         }

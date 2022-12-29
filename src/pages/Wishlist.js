@@ -6,9 +6,7 @@ import Mail from "../components/mail/Mail";
 import Product from "../../src/components/products/Product";
 import "../styles/Productlist.css";
 import { useEffect } from "react";
-import { useState } from "react";
-import { setWishlist } from "../Store/cartReducer";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 let Title = styled.div`
   font-size: 30px;
@@ -18,11 +16,7 @@ let Title = styled.div`
 
   text-transform: uppercase;
 `;
-let Filter = styled.span`
-  margin-right: 10px;
-  font-size: 25px;
-  font-weight: 20px;
-`;
+
 let Container = styled.div``;
 export default function Wishlist() {
   let wishListproducts = useSelector((state) => {

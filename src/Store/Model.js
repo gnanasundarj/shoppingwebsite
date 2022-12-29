@@ -8,7 +8,6 @@ let Modelstatus = createSlice({
   initialState: initialStatus,
   reducers: {
     setModel: (state, actions) => {
-      //   console.log(actions.payload, state.value);
       state.value = actions.payload;
     },
     closeModel: (state, actions) => {

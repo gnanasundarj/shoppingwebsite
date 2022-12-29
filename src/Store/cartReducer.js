@@ -69,7 +69,6 @@ const cartDetails = createSlice({
       state.fetchData = false;
     },
     setWishlist: (state, actions) => {
-      // console.log(actions.payload, "wish");
 
       state.Allproducts.forEach((data) => {
         if (data.id === actions.payload.id) {

@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-// import { popularProducts } from "../../Data/Data";
 import AllProducts from "../products/Product";
 import { useSelector } from "react-redux";
-import { useState } from "react";
-import { useEffect } from "react";
+
 let Container = styled.div``;
 let Allproducts = styled.div`
   font-size: 30px;
@@ -13,8 +11,7 @@ let Allproducts = styled.div`
 `;
 export default function Products() {
   let allpro = useSelector((state) => state.cartData.Allproducts);
-  // useEffect(() => {
-  // }, [allpro]);
+ 
 
   return (
     <div>

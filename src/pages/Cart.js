@@ -135,7 +135,6 @@ export default function Cart() {
       };
 
       dispatch(changeCount(pay));
-      console.log("inc", count, price);
     } else {
       let count = 0;
       if (data.count > 1) {
@@ -158,7 +157,6 @@ export default function Cart() {
     }
   }
   function removeCart(data) {
-    console.log(data);
     dispatch(remove(data));
   }
   function handleCheckout() {

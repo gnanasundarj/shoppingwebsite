@@ -63,9 +63,7 @@ export default function SearchMenu() {
   let navigate = useNavigate();
 
   function handleInput(e) {
-    // setSearchInput(e.target.value);
     dispatch(setModel(e.target.value));
-    console.log(searchInput);
     let filterProData = allProductData.filter((data) => {
       if (
         data.category.toLowerCase().includes(searchInput) ||
@@ -74,13 +72,11 @@ export default function SearchMenu() {
         return data;
       }
     });
-    console.log(filterProData);
 
     setFilterData(filterProData);
   }
   function handleSelect(data) {
     navigate(`/product/${data.id}`);
-    console.log(data.id);
   }
 
   return (
@@ -98,7 +94,7 @@ export default function SearchMenu() {
         <AiOutlineSearch size={30} />
       </Searcbutton>
       <SearchContainer className="scroll" searchInput={searchInput}>
-        {searchInput != "" &&
+        {searchInput !== "" &&
           filterData.map((data) => {
             return (
               <SearchResult

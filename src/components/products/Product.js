@@ -101,11 +101,9 @@ export default function AllProducts(props) {
   }
 
   function removeCart(data, params) {
-    let x = data.Allproducts.filter((pro) => {
-      return pro.id == params.id;
-    });
+   
     let cartCount = data.item.filter((pro) => {
-      return pro.id == params.id;
+      return pro.id === params.id;
     });
 
     let pay = {
@@ -113,15 +111,9 @@ export default function AllProducts(props) {
       count: cartCount[0].count,
       id: params.id,
     };
-    console.log(count, cartCount[0].count);
     dispatch(remove(pay));
   }
-  // useEffect(() => {
-  //   // console.log(info, params.info);
-  //   filterSingleProduct(info, params);
 
-  //   // console.log(product);
-  // }, [info]);
 
   function addToCart(data) {
     let cartData;
@@ -156,7 +148,6 @@ export default function AllProducts(props) {
       dispatch(add(cartData));
     }
 
-    console.log("add", cartData);
   }
 
   function addtoWishlist(data) {

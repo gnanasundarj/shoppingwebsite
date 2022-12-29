@@ -67,15 +67,12 @@ export default function Login(props) {
 
   function handleOnchange(e) {
     userData[e.target.name] = e.target.value;
-    console.log(userData);
   }
   //////fetch data from dp//////////
   async function fetchDtata(id) {
-    console.log(id);
     const docRef = doc(db, "userData", id);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
-      console.log("Document data:", docSnap.data());
 
       dispatch(setUserData(docSnap.data()));
       navigate("/");
@@ -87,17 +84,14 @@ export default function Login(props) {
   }
   ////////////////login//////////
   function login() {
-    console.log("in login");
     signInWithEmailAndPassword(auth, userData.mailID, userData.password)
       .then((res) => {
         fetchDtata(res.user.uid);
       })
       .catch((error) => {
         const errorMessage = error.message;
-        console.log("res", errorMessage);
         let msg = errorMessage.slice(22, errorMessage.indexOf(")"));
 
-        console.log(msg);
         seterrorMessage(msg ? msg : "network error");
       });
   }

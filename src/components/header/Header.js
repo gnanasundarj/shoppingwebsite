@@ -1,7 +1,6 @@
 import React from "react";
 import {
   AiOutlineShoppingCart,
-  AiOutlineSearch,
   AiOutlineHeart,
 } from "react-icons/ai";
 import { useNavigate } from "react-router";
@@ -9,25 +8,12 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../Store/LoginReducer";
 import SearchMenu from "../SearchMenu";
-import Userauth from "../../pages/Userauth";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-
 import "./header.css";
-let Searcbutton = styled.div`
-  margin-left: 10px;
-  width: 60px;
-  height: 30px;
-  cursor: pointer;
-`;
-let Lan = styled.div`
-  // font-size: 20px;
-  // font-weight: 500;
-`;
-let Input = styled.input`
-  height: 30px;
-  width: 300px;
-`;
+
+
+
 let Cart = styled.div`
   position: relative;
   display: flex;

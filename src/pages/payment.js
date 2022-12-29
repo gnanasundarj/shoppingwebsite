@@ -1,10 +1,9 @@
 import React from "react";
-import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import styled from "styled-components";
 import spinner from "../images/spinner.gif";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 let Container = styled.div`
   position: absolute;
@@ -109,16 +108,13 @@ export default function Payment() {
       setnumboolean(false);
     }
     if (len < 12 && !numBoolean) {
-      console.log("in teting");
       setButton(button - 1);
       setnumboolean(true);
     }
-    console.log(num.length, numBoolean);
   }
   function handleExpiray(e) {
     let num = e.target.value.replace(/[^\d]/g, "");
 
-    console.log(num, num.length);
     let len = num.length;
     if (len <= 2) {
       setcardExpiray(num);
@@ -131,7 +127,6 @@ export default function Payment() {
       setexpiryBoolean(false);
     }
     if (len < 4 && !expiryBoolean) {
-      // console.log("in teting");
       setButton(button - 1);
       setexpiryBoolean(true);
     }
@@ -146,7 +141,6 @@ export default function Payment() {
       setcvvboolean(false);
     }
     if (len < 3 && !cvvBoolean) {
-      // console.log("in teting");
       setButton(button - 1);
       setcvvboolean(true);
     }
@@ -160,7 +154,6 @@ export default function Payment() {
       setnamboolean(false);
     }
     if (len < 3 && !namoolean) {
-      // console.log("in teting");
       setButton(button - 1);
       setnamboolean(true);
     }
@@ -173,9 +166,7 @@ export default function Payment() {
       setInd(80);
     }
   }
-  useEffect(() => {
-    console.log(button);
-  }, [button]);
+ 
   return (
     <Wrapper className="d-flex justify-content-center align-items-center ">
       <Container>

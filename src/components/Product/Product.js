@@ -42,11 +42,6 @@ let Sizefilter = styled.div`
   margin-right: 10px;
 `;
 let Size = styled.div``;
-let Inc = styled.div`
-  font-size: 40px;
-  font-weight: 100;
-  cursor: pointer;
-`;
 
 let Cart = styled.div`
   height: 40px;
@@ -87,6 +82,7 @@ export default function Product() {
     let cartCount = data.item.filter((pro) => {
       return pro.id == params.info;
     });
+    console.log(x, data, params.info);
     setPrice(x[0].price);
     if (x[0].cartStatus === true) {
       setCount(cartCount[0].count);
@@ -94,10 +90,7 @@ export default function Product() {
     setproduct(...x);
   }
   useEffect(() => {
-    // console.log(info, params.info);
     filterSingleProduct(info, params);
-
-    // console.log(product);
   }, [info, params]);
   function handleSelect(eventKey) {
     setSize(eventKey);
@@ -128,12 +121,9 @@ export default function Product() {
       };
     }
 
-    console.log(cartdetail);
-
     dispatch(add(cartdetail));
   }
   function removeCart() {
-    console.log(count);
     dispatch(remove({ count, price, initialprice, id: product.id }));
   }
 
