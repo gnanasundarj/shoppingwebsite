@@ -112,6 +112,7 @@ export default function Cart() {
   let cart = useSelector((state) => state.cartData.item);
   let checkOutData = useSelector((state) => state.cartData.checkout);
   let [checkout, setCheckout] = useState(true);
+  let status = useSelector((state) => state.LoginData);
   let navigate = useNavigate();
   let dispatch = useDispatch();
   useEffect(() => {
@@ -161,7 +162,11 @@ export default function Cart() {
   }
   function handleCheckout() {
     if (checkOutData.subtotal > 0) {
-      navigate("/payment");
+      if (status.loginStatus) {
+        navigate("/payment");
+      } else {
+        navigate("/login");
+      }
     }
   }
   return (

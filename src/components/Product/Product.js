@@ -82,7 +82,7 @@ export default function Product() {
     let cartCount = data.item.filter((pro) => {
       return pro.id == params.info;
     });
-    console.log(x, data, params.info);
+    // console.log(x, data, params.info);
     setPrice(x[0].price);
     if (x[0].cartStatus === true) {
       setCount(cartCount[0].count);

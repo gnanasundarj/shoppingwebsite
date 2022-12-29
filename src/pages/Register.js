@@ -78,7 +78,6 @@ export default function Register(props) {
   }
   function updateUserData(e) {
     userData[e.target.name] = e.target.value;
-
   }
   //////////////////////stroting in firebase.////////////
   async function storeinFirebase(id, data) {

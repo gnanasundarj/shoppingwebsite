@@ -73,12 +73,11 @@ export default function Login(props) {
     const docRef = doc(db, "userData", id);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
-
       dispatch(setUserData(docSnap.data()));
-      navigate("/");
+      navigate(-1);
     } else {
       // doc.data() will be undefined in this case
-      console.log("No such document!");
+      // console.log("No such document!");
       seterrorMessage("No such document!");
     }
   }
